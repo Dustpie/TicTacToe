@@ -1,2 +1,7 @@
-package PACKAGE_NAME;public class Board {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Board {
+    List<Board> board = new ArrayList<>() {};
+
 }

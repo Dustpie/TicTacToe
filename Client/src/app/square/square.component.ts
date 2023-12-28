@@ -1,36 +1,16 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @Component({
   selector: 'app-square',
   standalone: true,
-  template: `
-    <div
-      class="game-square rounded-lg border bg-teal-lightest 
-      shadow-md "
-    >
-      <p class="text-grey-darker"></p>
-    </div>
-  `,
-  styles: [
-    `
-      .game-square {
-        height: 96%;
-        text-align: center;
-        line-height: 0.85;
-        cursor: pointer;
-      }
-
-      p {
-        display: inline;
-        margin: 0px;
-        font-size: 14rem;
-        overflow: hidden;
-      }
-
-      .noClick {
-        pointer-events: none;
-      }
-    `,
-  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  templateUrl: './square.component.html',
+  styleUrls: ['./square.component.less'],
 })
-export class SquareComponent {}
+export class SquareComponent {
+  constructor() {}
+
+  ngOnInit() {
+    console.log('SquareComponent has been initialized');
+  }
+}
