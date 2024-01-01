@@ -1,10 +1,14 @@
-<div class="board">
-  <div *ngFor="let row of board">
-    <app-square *ngFor="let square of row">
-      {{ square }}
-    </app-square>
+<div class="container">
+  <div class="info-board"></div>
+  <div class="board">
+    <div class="row" *ngFor="let row of board; let i = index">
+      <app-square
+        *ngFor="let square of row; let j = index"
+        (click)="handleClick(i, j)"
+      >
+        {{ square }}
+      </app-square>
+    </div>
   </div>
-
-  Test
-  <div class="notifications">Test</div>
+  <div class="notification-board"></div>
 </div>
